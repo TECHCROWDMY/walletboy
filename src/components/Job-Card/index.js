@@ -2,6 +2,8 @@ import React from 'react'
 import './style.css'
 
 
+
+
 const Jobs = ({jobs}) => {
     return (
         <div class="grid">
