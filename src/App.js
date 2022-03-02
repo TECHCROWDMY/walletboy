@@ -5,7 +5,7 @@ import Navbar from './components/Navbar/';
 import { BrowserRouter as Router } from 'react-router-dom';
 // import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import About from './components/pages/about';
+// import About from './components/pages/about';
 
 class App extends Component {
     state = {
