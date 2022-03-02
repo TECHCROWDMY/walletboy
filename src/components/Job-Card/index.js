@@ -13,7 +13,7 @@ const Jobs = ({jobs}) => {
                 <div class="card">
                     <div class="card-body">
                         <div class="logo">
-                            <img src={job.company_logo} />
+                            <img src={job.company_logo} alt="company logo"/>
                         </div>
                         <div class="job-info">
                             <h5 class="card-title">{job.title}</h5>
