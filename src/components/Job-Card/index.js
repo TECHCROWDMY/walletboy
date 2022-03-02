@@ -9,7 +9,7 @@ const Jobs = ({jobs}) => {
         <div class="grid">
         
             {(jobs).map((job) => (
-                <a href={job.url} target="_blank">
+                <a href={job.url} target="_blank" rel="noreferrer">
                 <div class="card">
                     <div class="card-body">
                         <div class="logo">
