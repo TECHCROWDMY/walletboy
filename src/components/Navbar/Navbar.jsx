@@ -1,6 +1,6 @@
 import React from 'react';
 import {Nav,NavLink,Bars,NavMenu,NavBtn,NavBtnLink,} from './NavbarElements';
-import logo from './logo.svg';
+import logo from '../../assets/logo.svg';
 
 const Navbar = () => {
   return (

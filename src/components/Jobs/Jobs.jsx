@@ -1,14 +1,31 @@
-import React from 'react'
+import React, {Component}  from 'react'
 import './style.css'
 
 
 
 
-const Jobs = ({jobs}) => {
+class Jobs extends Component  {
+
+    state = {
+        jobs: []
+    };
+    componentDidMount() {
+
+        fetch(`https://remotive.io/api/remote-jobs`)
+            .then(res => res.json())
+            .then((data) => {
+                this.setState({ 
+                    jobs: data.jobs 
+                })
+            })
+            .catch(console.log)
+    }
+
+    render() {
     return (
         <div class="grid">
         
-            {(jobs).map((job) => (
+            {(this.state.jobs).map((job) => (
                 <a href={job.url} target="_blank" rel="noreferrer">
                 <div class="card">
                     <div class="card-body">
@@ -24,7 +41,7 @@ const Jobs = ({jobs}) => {
                 </div></a>
             ))}
         </div>
-    )
+    )}
 };
 
 export default Jobs
