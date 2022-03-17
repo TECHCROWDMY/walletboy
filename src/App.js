@@ -1,12 +1,8 @@
 import React, {Component} from 'react';
-import Jobs from './components/Job-Card/';
-import './App.css';
-import Navbar from './components/Navbar/';
+  import {Navbar, Jobs} from './components/';
 import { BrowserRouter as Router } from 'react-router-dom';
-// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
-// import About from './components/pages/about';
-
+ 
+ 
 class App extends Component {
     state = {
         jobs: []
