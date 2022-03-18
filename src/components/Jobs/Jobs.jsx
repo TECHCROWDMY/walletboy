@@ -1,31 +1,23 @@
-import React, {Component}  from 'react'
-import './style.css'
+import React, { useEffect, useState } from "react";
+import './style.css';
+// import fetchJobs from '../../services'
 
+const Jobs = () => { 
 
+    const [items, setItems] = useState([]);
+    
+    useEffect(()=>{
+        fetch('https://remotive.io/api/remote-jobs')
+        .then(res => res.json())
+        .then((data) => setItems(data.jobs)
+        )
+        .catch(console.log)
+    })
 
-
-class Jobs extends Component  {
-
-    state = {
-        jobs: []
-    };
-    componentDidMount() {
-
-        fetch(`https://remotive.io/api/remote-jobs`)
-            .then(res => res.json())
-            .then((data) => {
-                this.setState({ 
-                    jobs: data.jobs 
-                })
-            })
-            .catch(console.log)
-    }
-
-    render() {
     return (
         <div class="grid">
         
-            {(this.state.jobs).map((job) => (
+            {items.map((job) => (
                 <a href={job.url} target="_blank" rel="noreferrer">
                 <div class="card">
                     <div class="card-body">
@@ -41,7 +33,19 @@ class Jobs extends Component  {
                 </div></a>
             ))}
         </div>
-    )}
+    )
+
+
+
 };
 
 export default Jobs
+
+ 
+
+// const Jobs = ({jobs}) => {
+//   return (
+//     <div>Jobs</div>
+//   )
+// }
+ 
