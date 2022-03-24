@@ -11,7 +11,7 @@ const Jobs = () => {
         .then(res => res.json())
         .then((data) => setItems(data.jobs)
         )
-        .catch(console.log)
+        .catch(console.log);
     })
 
     return (
@@ -19,18 +19,19 @@ const Jobs = () => {
         
             {items.map((job) => (
                 <a href={job.url} target="_blank" rel="noreferrer">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="logo">
-                            <img src={job.company_logo} alt="company logo"/>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="logo">
+                                <img src={job.company_logo} alt="company logo"/>
+                            </div>
+                            <div class="job-info">
+                                <h5 class="card-title">{job.title}</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">{job.company_name}</h6>
+                            </div>
+                            
                         </div>
-                        <div class="job-info">
-                            <h5 class="card-title">{job.title}</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">{job.company_name}</h6>
-                        </div>
-                        
                     </div>
-                </div></a>
+                </a>
             ))}
         </div>
     )
